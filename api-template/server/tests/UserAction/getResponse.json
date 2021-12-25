@@ -1,0 +1,16 @@
+{
+  "userActions": [
+    {
+      "id": "b2c47c62-0230-522e-4ed3-e94fe0530806",
+      "userId": "ecfa7a1f-018d-d7ec-40e5-620f80eb5a46",
+      "action": "login",
+      "createdAt": "2020-12-12T00:00:00.000Z"
+    },
+    {
+      "id": "d6002201-e49a-5460-e145-b96c9ae53652",
+      "userId": "ecfa7a1f-018d-d7ec-40e5-620f80eb5a46",
+      "action": "logout",
+      "createdAt": "2020-12-12T10:00:00.000Z"
+    }
+  ]
+}
