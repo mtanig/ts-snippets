@@ -2,6 +2,7 @@ import Id from './Id';
 import Action from './Action';
 import UserId from './UserId';
 import CreatedAt from './CreatedAt';
+import UserActionDbAdapter from '../../adapters/db/UserActionDbAdapter';
 
 export interface UserActionParams {
     id?: string,
@@ -21,6 +22,10 @@ export default class UserAction {
         this.userId = new UserId(user.userId);
         this.action = new Action(user.action);
         this.createdAt = new CreatedAt(user.createdAt);
+    }
+
+    async register(adapter: UserActionDbAdapter) {
+        await adapter.registerUserAction(this);
     }
 
     getAsObject(): Required<UserActionParams> {
