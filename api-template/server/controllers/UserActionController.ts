@@ -20,7 +20,6 @@ export class UserActionController {
     async registerUserAction(req: express.Request, res: express.Response, next: express.NextFunction) {
         try {
             const body: UserActionPostBody = req.body;
-
             let userAction: UserAction;
             try {
                 userAction = new UserAction(body);

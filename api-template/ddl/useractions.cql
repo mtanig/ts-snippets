@@ -1,4 +1,4 @@
-CREATE TABLE useractionhistories (
+CREATE TABLE useractions (
     id              uuid,
     userid          uuid,
     action          text,

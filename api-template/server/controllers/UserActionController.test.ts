@@ -18,7 +18,7 @@ describe('UserActionController', () => {
     let app: any;
     let res: any;
 
-    const TEST_BODY_RAW = require('../tests/UserAction/postBody.json');
+    const TEST_BODY_RAW = require('../../tests/UserAction/postBody.json');
 
     beforeEach(async () => {
         app = await (new AppFactory()).create();
@@ -78,7 +78,7 @@ describe('UserActionController', () => {
     });
 
     describe('/v1/userIds/:userId/userActions (GET)', () => {
-        const EXPECTED_RESPONSE_RAW = require('../tests/UserAction/getResponse.json');
+        const EXPECTED_RESPONSE_RAW = require('../../tests/UserAction/getResponse.json');
         const EXPECTED_RESPONSE = cloneDeep(EXPECTED_RESPONSE_RAW);
 
         const TEST_USER_ID = EXPECTED_RESPONSE.userActions[0].userId;

@@ -7,7 +7,7 @@ export interface CassandraParams {
     user: string,
     pass: string,
     keyspace: string,
-    localDataCenter: string,
+    localDataCenter?: string,
     consistency?: cassandra.types.consistencies,
 }
 
@@ -20,7 +20,7 @@ export class Cassandra {
     static types = cassandra.types;
 
     static getInstance(config: Partial<CassandraParams>) {
-        if (!config || !config.host || !config.user || !config.pass || !config.keyspace || !config.localDataCenter) {
+        if (!config || !config.host || !config.user || !config.pass || !config.keyspace) {
             throw new Error('config is invalid');
         }
 
@@ -39,7 +39,7 @@ export class Cassandra {
             contactPoints: HostnameResolver.resolve(config.host),
             keyspace: config.keyspace,
             authProvider,
-            localDataCenter: 'dc1',
+            localDataCenter: config.localDataCenter || 'dc1',
             queryOptions: {
                 consistency: config.consistency || cassandra.types.consistencies.quorum
             },
